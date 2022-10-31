@@ -5,13 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int voto = 1;
-        int votos1 = 0;
-        int votos2 = 0;
-        int votos3 = 0;
-        int votos4 = 0;
-        int votosNulo = 0;
-        int votosBrancos = 0;
+        int[] votos = new int[7];
 
         Scanner leitura = new Scanner(System.in);
 
@@ -26,38 +20,18 @@ public class Main {
                     "\nVote 6 para voto em branco"
             );
 
-            voto = leitura.nextInt();
+            votos[leitura.nextInt()]++;
 
-            switch (voto) {
-                case 1:
-                    votos1++;
-                    break;
-                case 2:
-                    votos2++;
-                    break;
-                case 3:
-                    votos3++;
-                    break;
-                case 4:
-                    votos4++;
-                    break;
-                case 5:
-                    votosNulo++;
-                    break;
-                case 6:
-                    votosBrancos++;
-                    break;
-            }
 
-        } while (voto != 0);
+        } while (votos[0] == 0);
 
         System.out.println("= Resultado =" +
-                "\nVotos Felipão da Massa: " + votos1 +
-                "\nVotos para Carioca Perdido: " + votos2 +
-                "\nVotos para Bandido Ficha Limpa: " + votos3 +
-                "\nVotos para Policial Racista: " + votos4 +
-                "\nVotos nulo: " + votosNulo +
-                "\nVotos em branco: " + votosBrancos
+                "\nVotos Felipão da Massa: " + votos[1] +
+                "\nVotos para Carioca Perdido: " + votos[2] +
+                "\nVotos para Bandido Ficha Limpa: " + votos[3] +
+                "\nVotos para Policial Racista: " + votos[4] +
+                "\nVotos nulo: " + votos[5] +
+                "\nVotos em branco: " + votos[6]
         );
     }
 }
